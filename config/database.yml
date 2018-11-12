@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: postgres
+  password: root
+
+development:
+  <<: *default
+  database: bandmusic_development
+
+
+test:
+  <<: *default
+  database: bandmusic_test
+
+
+production:
+  <<: *default
+  database: bandmusic_production
+  username: bandmusic
+  password: <%= ENV['BANDMUSIC_DATABASE_PASSWORD'] %>
