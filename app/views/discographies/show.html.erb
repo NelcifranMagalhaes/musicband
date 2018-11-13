@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @discography.name %>
+</p>
+
+<p>
+  <strong>Date rise:</strong>
+  <%= @discography.date_rise %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @discography.description %>
+</p>
+
+<%= link_to 'Edit', edit_discography_path(@discography) %> |
+<%= link_to 'Back', discographies_path %>

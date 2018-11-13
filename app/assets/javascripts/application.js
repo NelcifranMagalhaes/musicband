@@ -15,3 +15,4 @@
 //= require bulma
 //= require activestorage
 //= require_tree .
+//= require serviceworker-companion

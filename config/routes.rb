@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :discographies
+  resources :tours
+  resources :artists
+  resources :bands
+  devise_for :users
   get 'pages/home'
   get 'pages/discography'
   get 'pages/tour'
