@@ -39,33 +39,41 @@
                 <a class="navbar-item" id="contact_id">
                     Contact
                 </a>
+               <% if current_user.present? %>
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link">
-                        More
+                        Mais
                     </a>
                     <div class="navbar-dropdown is-boxed">
-                        <a class="navbar-item">
-                            Mechandise
-                        </a>
-                        <a class="navbar-item" >
-                            Extras
-                        </a>
-                        <a class="navbar-item">
-                            Fotos
-                        </a>
+                        <%= link_to "Cadastrar Banda", bands_path ,class: "navbar-item" %>
+                        <%= link_to "Cadastrar integrantes", artists_path ,class: "navbar-item" %>
+                        <%= link_to "Cadastrar discografia", discographies_path ,class: "navbar-item" %>
+                        <%= link_to "Cadastrar shows", tours_path ,class: "navbar-item" %>
                     </div>
                 </div>
+               <% end %>
             </div>
-
+            <div class="navbar-end">
+               <% if current_user.present? %>
+                   <div class="navbar-item has-dropdown is-hoverable">
+                       <%= link_to('Sair'.html_safe,  destroy_user_session_path , method: 'delete',class: 'navbar-link')%>
+                   </div>
+               <% end %>
+            </div>
         </div>
     </nav>
+    
 
-
-
-    <section>
-        <%= yield %>
-    </section>
-
+    <div class="container">
+        <div id="flow">
+            <span class="flow-1"></span>
+            <span class="flow-2"></span>
+            <span class="flow-3"></span>
+        </div>
+        <div class="section">
+              <%= yield %>
+      </div>
+    </div>
 
     <footer class="footer">
         <div class="container">

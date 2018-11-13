@@ -1,27 +1,26 @@
-<%= form_with(model: band, local: true) do |form| %>
-  <% if band.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(band.errors.count, "error") %> prohibited this band from being saved:</h2>
-
-      <ul>
-      <% band.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= simple_form_for @band do |f| %>
+  <% if f.error_notification.present?  %>
+    <div class="notification">
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     </div>
   <% end %>
+<div class="box">
+  <div class="field">
+    <label class="label">Nome</label>
+    <div class="control">
+      <%= f.input :name,label: false ,input_html: {class: 'input'}%>
+    </div>
+  </div>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <label class="label">Descrição</label>
+    <div class="control">
+      <%= f.input :description, label: false ,input_html: {class: 'textarea'}%>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class= "control">
+    <%= f.button :submit ,class: "button is-primary"%>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
 <% end %>

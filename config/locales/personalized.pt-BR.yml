@@ -1,0 +1,51 @@
+# encoding: UTF-8
+pt-BR:
+  activerecord:
+    models:
+      artist: Integrantes 
+      band: Banda 
+      discography: Discografia 
+      tour: Show 
+      user: Usuário 
+
+    attributes:  
+      artist:
+        name: Nome
+        description: Descrição
+        nick_name: Nick/Apelido
+        position: Posição na Banda
+
+      band:
+        name: Nome
+        description: Descrição
+
+      discography:
+        name: Nome
+        description: Descrição
+        date_rise: Data de Lançamento
+
+      tour:
+        name: Nome
+        description: Descrição
+        date_show: Data do Show
+
+      user:
+        email: Email
+        password: Senha
+        
+
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
+  helpers:
+    page_entries_info:
+      one_page:
+        display_entries:
+          zero: "Nenhum %{entry_name} encontrado(a)"
+          one: "Exibindo <b>1</b> %{entry_name}"
+          other: "Exibindo <b>%{count}</b> %{entry_name}"
+      more_pages:
+        display_entries: "Exibindo %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> de <b>%{total}</b> no total"

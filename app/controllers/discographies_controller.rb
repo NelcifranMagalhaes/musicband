@@ -1,5 +1,6 @@
 class DiscographiesController < ApplicationController
   before_action :set_discography, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /discographies
   # GET /discographies.json
