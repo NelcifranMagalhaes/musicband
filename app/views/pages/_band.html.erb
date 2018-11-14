@@ -1,7 +1,7 @@
 <section class="section">
     <div class="container has-text-centered" id="div-band">
         <h2 class="title">A Banda</h2>
-        <p><%= @band.description %></p>
+        <p><%= @band.description if @band.present?%></p>
 
         <div class="columns is-centered" style="padding: 2rem">
             <% @artists.each do |artist| %>
@@ -10,7 +10,9 @@
                 <div class="card">
                     <div class="card-image">
                         <figure class="image is-2by1">
-                        <%=image_tag(artist.artist_photo.url, class: "image is-64x64")%>
+                            <% if artist.artist_photo.present? %>  
+                                <%=image_tag(artist.artist_photo.url, class: "image is-64x64")%>
+                            <% end %>
                         </figure>
                     </div>
                     <div class="card-content">

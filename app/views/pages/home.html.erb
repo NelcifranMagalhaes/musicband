@@ -1,6 +1,8 @@
 <section class="hero">
     <figure class="image is-2by1">
-        <%=image_tag(@band.band_photo.url)%>
+		<% if @band.present? %>  
+        	<%=image_tag(@band.band_photo.url)%>
+        <% end %>
     </figure>
 </section>
 <%= render partial: "band",object: @artists %>
