@@ -32,6 +32,14 @@
       <%= f.input :description, label: false ,input_html: {class: 'textarea'}%>
     </div>
   </div>
+
+  <div class="field">
+    <label class="label">Foto do integrante</label>
+      <div class="control">
+        <%= f.input :artist_photo,as: :file,label: false ,input_html: {class: 'input'}%>
+    </div>
+  </div>
+
   <div class= "control">
     <%= f.button :submit ,class: "button is-primary"%>
   </div>

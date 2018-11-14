@@ -16,9 +16,7 @@
   <body>
     <nav class="navbar is-dark">
         <div class="navbar-brand">
-            <a class="navbar-item">
-                Nome da banda
-            </a>
+            <%= link_to "Maldita Visão", root_path ,class: "navbar-item" %>
             <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
                 <span></span>
                 <span></span>
@@ -28,16 +26,17 @@
 
         <div id="navbarExampleTransparentExample" class="navbar-menu">
             <div class="navbar-start">
-                <%= link_to "Home", root_path ,class: "navbar-item" %>
-
                 <a class="navbar-item" id="band_id">
-                    Band
+                    Banda
                 </a>
                 <a class="navbar-item" id="tour_id">
-                    Tour
+                    Shows
+                </a>
+                <a class="navbar-item" id="disco_id">
+                    Músicas
                 </a>
                 <a class="navbar-item" id="contact_id">
-                    Contact
+                    Contato
                 </a>
                <% if current_user.present? %>
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -80,16 +79,16 @@
             <div class="content has-text-centered">
                 <p>
                     <a href="">
-                        <i class="fab fa-facebook-square fa-2x"></i>
+                        <i class="fa fa-facebook-square fa-2x"></i>
                     </a>
                     <a href="">
-                        <i class="fab fa-twitter-square fa-2x"></i>
+                        <i class="fa fa-twitter-square fa-2x"></i>
                     </a>
                     <a href="">
-                        <i class="fab fa-instagram fa-2x"></i>
+                        <i class="fa fa-instagram fa-2x"></i>
                     </a>
                     <a href="">
-                        <i class="fab fa-snapchat fa-2x"></i>
+                        <i class="fa fa-snapchat fa-2x"></i>
                     </a>
                 </p>
                 <p>
@@ -119,6 +118,11 @@
     $("#tour_id").click(function() {
         $('html,body').animate({
             scrollTop: $("#div_tour").offset().top},
+            'slow');
+    });
+    $("#disco_id").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#div_disco").offset().top},
             'slow');
     });
 </script>

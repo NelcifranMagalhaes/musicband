@@ -29,7 +29,7 @@ class DiscographiesController < ApplicationController
 
     respond_to do |format|
       if @discography.save
-        format.html { redirect_to @discography, notice: 'Discography was successfully created.' }
+        format.html { redirect_to @discography, notice: 'Discografia Criada.' }
         format.json { render :show, status: :created, location: @discography }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class DiscographiesController < ApplicationController
   def update
     respond_to do |format|
       if @discography.update(discography_params)
-        format.html { redirect_to @discography, notice: 'Discography was successfully updated.' }
+        format.html { redirect_to @discography, notice: 'Discografia Atualizada.' }
         format.json { render :show, status: :ok, location: @discography }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class DiscographiesController < ApplicationController
   def destroy
     @discography.destroy
     respond_to do |format|
-      format.html { redirect_to discographies_url, notice: 'Discography was successfully destroyed.' }
+      format.html { redirect_to discographies_url, notice: 'Discografia Deletada.' }
       format.json { head :no_content }
     end
   end

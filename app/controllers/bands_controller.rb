@@ -29,7 +29,7 @@ class BandsController < ApplicationController
 
     respond_to do |format|
       if @band.save
-        format.html { redirect_to @band, notice: 'Band was successfully created.' }
+        format.html { redirect_to @band, notice: 'Banda Criada.' }
         format.json { render :show, status: :created, location: @band }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class BandsController < ApplicationController
   def update
     respond_to do |format|
       if @band.update(band_params)
-        format.html { redirect_to @band, notice: 'Band was successfully updated.' }
+        format.html { redirect_to @band, notice: 'Banda atualizada.' }
         format.json { render :show, status: :ok, location: @band }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class BandsController < ApplicationController
   def destroy
     @band.destroy
     respond_to do |format|
-      format.html { redirect_to bands_url, notice: 'Band was successfully destroyed.' }
+      format.html { redirect_to bands_url, notice: 'Banda deletada.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class BandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def band_params
-      params.require(:band).permit(:name, :description)
+      params.require(:band).permit(:name, :description,:band_photo)
     end
 end

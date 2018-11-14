@@ -1,8 +1,9 @@
 <section class="hero">
-    <figure class="image">
-        <img src="https://images.pexels.com/photos/167636/pexels-photo-167636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+    <figure class="image is-2by1">
+        <%=image_tag(@band.band_photo.url)%>
     </figure>
 </section>
-<%= render partial: "band" %>
-<%= render partial: "tour" %>
+<%= render partial: "band",object: @artists %>
+<%= render partial: "discography",object: @discographies %>
+<%= render partial: "tour" ,object: @tours %>
 <%= render partial: "contact" %>

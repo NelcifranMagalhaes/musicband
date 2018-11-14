@@ -29,7 +29,7 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
-        format.html { redirect_to @tour, notice: 'Tour was successfully created.' }
+        format.html { redirect_to @tour, notice: 'Anúncio de show criado.' }
         format.json { render :show, status: :created, location: @tour }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ToursController < ApplicationController
   def update
     respond_to do |format|
       if @tour.update(tour_params)
-        format.html { redirect_to @tour, notice: 'Tour was successfully updated.' }
+        format.html { redirect_to @tour, notice: 'Anúncio de show atualizado.' }
         format.json { render :show, status: :ok, location: @tour }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ToursController < ApplicationController
   def destroy
     @tour.destroy
     respond_to do |format|
-      format.html { redirect_to tours_url, notice: 'Tour was successfully destroyed.' }
+      format.html { redirect_to tours_url, notice: 'Anúncio de show deletado.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class ToursController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tour_params
-      params.require(:tour).permit(:name, :date_show, :description)
+      params.require(:tour).permit(:name, :date_show, :description,:tour_photo)
     end
 end

@@ -1,5 +1,9 @@
-<h1>New Band</h1>
 
-<%= render 'form', band: @band %>
-
-<%= link_to 'Back', bands_path %>
+<article class="message is-dark">
+  <div class="message-header">
+    <p>Cadastrar uma nova Banda</p>
+</div>
+ </article>   
+	<%= render 'form', band: @band %>
+<br>
+<%= link_to 'Voltar', bands_path ,class: "button is-info is-inverted"%>

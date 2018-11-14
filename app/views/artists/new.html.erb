@@ -1,5 +1,9 @@
-<h1>New Artist</h1>
 
-<%= render 'form', artist: @artist %>
-
-<%= link_to 'Back', artists_path %>
+<article class="message is-dark">
+  <div class="message-header">
+    <p>Cadastrar um novo integrante</p>
+</div>
+ </article>   
+	<%= render 'form', artist: @artist %>
+<br>
+<%= link_to 'Voltar', artists_path ,class: "button is-info is-inverted"%>

@@ -1,5 +1,9 @@
-<h1>New Discography</h1>
 
-<%= render 'form', discography: @discography %>
-
-<%= link_to 'Back', discographies_path %>
+<article class="message is-dark">
+  <div class="message-header">
+    <p>Cadastrar uma nova Discografia ou Música</p>
+</div>
+ </article>   
+	<%= render 'form', discography: @discography %>
+<br>
+<%= link_to 'Voltar', discographies_path ,class: "button is-info is-inverted"%>

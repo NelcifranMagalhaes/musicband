@@ -29,7 +29,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       if @artist.save
-        format.html { redirect_to @artist, notice: 'Artist was successfully created.' }
+        format.html { redirect_to @artist, notice: 'Integrante adicionado.' }
         format.json { render :show, status: :created, location: @artist }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class ArtistsController < ApplicationController
   def update
     respond_to do |format|
       if @artist.update(artist_params)
-        format.html { redirect_to @artist, notice: 'Artist was successfully updated.' }
+        format.html { redirect_to @artist, notice: 'Integrante Atualizado.' }
         format.json { render :show, status: :ok, location: @artist }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class ArtistsController < ApplicationController
   def destroy
     @artist.destroy
     respond_to do |format|
-      format.html { redirect_to artists_url, notice: 'Artist was successfully destroyed.' }
+      format.html { redirect_to artists_url, notice: 'Integrante deletado.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +70,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :nick_name, :description, :position)
+      params.require(:artist).permit(:name, :nick_name, :description, :position,:artist_photo)
     end
 end

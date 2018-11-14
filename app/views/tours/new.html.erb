@@ -1,5 +1,8 @@
-<h1>New Tour</h1>
-
-<%= render 'form', tour: @tour %>
-
-<%= link_to 'Back', tours_path %>
+<article class="message is-dark">
+  <div class="message-header">
+    <p>Cadastrar um novo Show</p>
+</div>
+ </article>   
+	<%= render 'form', tour: @tour %>
+<br>
+<%= link_to 'Voltar', tours_path ,class: "button is-info is-inverted"%>
