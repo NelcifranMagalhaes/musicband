@@ -1,7 +1,7 @@
 <section class="hero">
     <figure class="image is-2by1">
 		<% if @band.present? %>  
-	       	<%=image_tag(@band.band_photo.url)%>
+	       	<%= cl_image_tag @band.band_photo.filename + ".jpg",secure: true%>
         <% end %>
     </figure>
 </section>
