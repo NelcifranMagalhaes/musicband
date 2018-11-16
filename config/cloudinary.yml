@@ -1,14 +1,27 @@
 development:
-  cloud_name: <%= ENV["CLOUD_NAME"] %>
-  api_key: <%= ENV["CN_API_KEY"] %>
-  api_secret: <%= ENV["CN_API_SECRET"] %>
+  cloud_name: foodxd
+  api_key: '538463886253582'
+  api_secret: O6yw-KtALvNyMKRohpKHVyccI74
   enhance_image_tag: true
   static_image_support: false
 
 production:
-  cloud_name: <%= ENV["CLOUD_NAME"] %>
-  api_key: <%= ENV["CN_API_KEY"] %>
-  api_secret: <%= ENV["CN_API_SECRET"] %>
+  cloud_name: foodxd
+  api_key: '538463886253582'
+  api_secret: O6yw-KtALvNyMKRohpKHVyccI74
   enhance_image_tag: true
   static_image_support: true
 
+# development:
+#   cloud_name: <%= ENV["CLOUD_NAME"] %>
+#   api_key: <%= ENV["CN_API_KEY"] %>
+#   api_secret: <%= ENV["CN_API_SECRET"] %>
+#   enhance_image_tag: true
+#   static_image_support: false
+
+# production:
+#   cloud_name: <%= ENV["CLOUD_NAME"] %>
+#   api_key: <%= ENV["CN_API_KEY"] %>
+#   api_secret: <%= ENV["CN_API_SECRET"] %>
+#   enhance_image_tag: true
+#   static_image_support: true
