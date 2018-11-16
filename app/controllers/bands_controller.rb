@@ -22,6 +22,9 @@ class BandsController < ApplicationController
   def edit
   end
 
+  def saving_images(band)
+    Cloudinary::Uploader.upload("public/uploads/band/band_photo/#{band.id}/#{band.band_photo.filename}",public_id:"#{band.band_photo.filename}")
+  end
   # POST /bands
   # POST /bands.json
   def create
@@ -29,6 +32,7 @@ class BandsController < ApplicationController
 
     respond_to do |format|
       if @band.save
+        saving_images(@band)
         format.html { redirect_to @band, notice: 'Banda Criada.' }
         format.json { render :show, status: :created, location: @band }
       else

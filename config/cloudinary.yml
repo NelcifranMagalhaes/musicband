@@ -1,0 +1,14 @@
+development:
+  cloud_name: CLOUD_NAME
+  api_key: CN_API_KEY
+  api_secret: CN_API_SECRET
+  enhance_image_tag: true
+  static_image_support: false
+
+production:
+  cloud_name: CLOUD_NAME
+  api_key: CN_API_KEY
+  api_secret: CN_API_SECRET
+  enhance_image_tag: true
+  static_image_support: true
+  
