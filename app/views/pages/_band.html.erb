@@ -1,8 +1,9 @@
 <section class="section">
     <div class="container has-text-centered" id="div-band">
         <h2 class="title">A Banda</h2>
-        <p><%= @band.description if @band.present?%></p>
-
+        <div class="card">
+            <p><%= @band.description if @band.present?%></p>
+        </div>
         <div class="columns is-centered" style="padding: 2rem">
             <% @artists.each do |artist| %>
             <div class="column">
