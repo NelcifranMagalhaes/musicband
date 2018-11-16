@@ -22,6 +22,10 @@ class ArtistsController < ApplicationController
   def edit
   end
 
+  def saving_images(artist)
+    Cloudinary::Uploader.upload("public/uploads/artist/artist_photo/#{artist.id}/#{artist.artist_photo.filename}",public_id:"#{artist.artist_photo.filename}")
+  end
+
   # POST /artists
   # POST /artists.json
   def create
@@ -29,6 +33,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       if @artist.save
+        saving_images(@artist)
         format.html { redirect_to @artist, notice: 'Integrante adicionado.' }
         format.json { render :show, status: :created, location: @artist }
       else
@@ -43,6 +48,7 @@ class ArtistsController < ApplicationController
   def update
     respond_to do |format|
       if @artist.update(artist_params)
+        saving_images(@artist)
         format.html { redirect_to @artist, notice: 'Integrante Atualizado.' }
         format.json { render :show, status: :ok, location: @artist }
       else

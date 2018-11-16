@@ -22,6 +22,9 @@ class ToursController < ApplicationController
   def edit
   end
 
+  def saving_images(tour)
+    Cloudinary::Uploader.upload("public/uploads/tour/tour_photo/#{tour.id}/#{tour.tour_photo.filename}",public_id:"#{tour.tour_photo.filename}")
+  end
   # POST /tours
   # POST /tours.json
   def create
@@ -29,6 +32,7 @@ class ToursController < ApplicationController
 
     respond_to do |format|
       if @tour.save
+        saving_images(@tour)
         format.html { redirect_to @tour, notice: 'Anúncio de show criado.' }
         format.json { render :show, status: :created, location: @tour }
       else
@@ -43,6 +47,7 @@ class ToursController < ApplicationController
   def update
     respond_to do |format|
       if @tour.update(tour_params)
+        saving_images(@tour)
         format.html { redirect_to @tour, notice: 'Anúncio de show atualizado.' }
         format.json { render :show, status: :ok, location: @tour }
       else

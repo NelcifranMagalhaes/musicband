@@ -11,7 +11,7 @@
                     <div class="card-image">
                         <figure class="image is-2by1">
                             <% if artist.artist_photo.present? %>  
-                                <%=image_tag(artist.artist_photo.url, class: "image is-64x64")%>
+                                <%= cl_image_tag artist.artist_photo.filename + ".jpg",class: "image is-64x64",secure: true%>
                             <% end %>
                         </figure>
                     </div>
