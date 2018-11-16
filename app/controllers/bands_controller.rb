@@ -57,7 +57,7 @@ class BandsController < ApplicationController
   def destroy
     @band.destroy
     respond_to do |format|
-      format.html { redirect_to bands_url, notice: 'Banda deletada.' }
+      format.html { redirect_to bands_path, notice: 'Banda deletada.' }
       format.json { head :no_content }
     end
   end
