@@ -32,7 +32,9 @@
 	</div>
 
 	<div class="buttons">
-		<%= link_to 'Editar', edit_tour_path(@tour) ,class: "button is-link" %>
+		<% if current_user.present? %>
+			<%= link_to 'Editar', edit_tour_path(@tour) ,class: "button is-link" %>
+		<% end %>
 		<%= link_to 'Voltar', tours_path ,class: "button" %>
 
 	</div>

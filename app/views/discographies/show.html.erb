@@ -24,7 +24,9 @@
 		</div>
 	</div>
 	<div class="buttons">
-		<%= link_to 'Editar', edit_discography_path(@discography) ,class: "button is-link" %>
+		<% if current_user.present? %>
+			<%= link_to 'Editar', edit_discography_path(@discography) ,class: "button is-link" %>
+		<% end %>
 		<%= link_to 'Voltar', discographies_path ,class: "button" %>
 	</div>
 </div>

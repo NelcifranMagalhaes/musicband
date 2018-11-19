@@ -32,11 +32,11 @@
 	</div>
 
 	<div class="buttons">
-		<%= link_to 'Editar', edit_artist_path(@artist) ,class: "button is-link" %>
+		<% if current_user.present? %>
+			<%= link_to 'Editar', edit_artist_path(@artist) ,class: "button is-link" %>
+		<% end %>
 		<%= link_to 'Voltar', artists_path ,class: "button" %>
-
 	</div>
-
 </div>
 
 
