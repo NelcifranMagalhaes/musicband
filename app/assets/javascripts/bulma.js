@@ -9,5 +9,26 @@ $(document).ready(function() {
     });
 })();
 
+	$("#band_id").click(function() {
+	    $('html,body').animate({
+	        scrollTop: $("#div-band").offset().top},
+	        'slow');
+	});
+
+	$("#contact_id").click(function() {
+	    $('html,body').animate({
+	        scrollTop: $("#div_contact").offset().top},
+	        'slow');
+	});
+	$("#tour_id").click(function() {
+	    $('html,body').animate({
+	        scrollTop: $("#div_tour").offset().top},
+	        'slow');
+	});
+	$("#disco_id").click(function() {
+	    $('html,body').animate({
+	        scrollTop: $("#div_disco").offset().top},
+	        'slow');
+	});
 
  });
