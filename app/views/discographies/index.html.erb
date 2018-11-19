@@ -1,42 +1,42 @@
-<p id="notice"><%= notice %></p>
-
-<article class="message is-dark">
-  <div class="message-header">
-    <p>Discografia/Músicas</p>
-</div>
- </article>   
-
-<div class="row columns">
-
-<% @discographies.each do |discography| %>
-<div class="column">
-
-<div class="card">
-  <header class="card-header">
-    <p class="card-header-title">
-      <%= discography.name %>
-    </p>
-    <a href="#" class="card-header-icon" aria-label="more options">
-      <span class="icon">
-        <i class="fas fa-angle-down" aria-hidden="true"></i>
-      </span>
-    </a>
-  </header>
-  <div class="card-content">
-    <div class="content">
-        <%= discography.description[0...128] %>...
-      <br>
-      <p class="title is-4"><%= l discography.date_rise %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <article class="message is-dark">
+    <div class="message-header">
+      <p>Discografia/Músicas</p>
     </div>
+  </article>   
+
+  <div class="row columns">
+
+    <% @discographies.each do |discography| %>
+    <div class="column">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title">
+            <%= discography.name %>
+          </p>
+          <a href="#" class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </a>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <%= discography.description[0...128] %>...
+            <br>
+            <p class="title is-4"><%= l discography.date_rise %></p>
+          </div>
+        </div>
+        <footer class="card-footer">
+          <%= link_to 'Mostrar', discography,class: "card-footer-item button is-link"%>
+          <%= link_to 'Editar', edit_discography_path(discography),class: "card-footer-item button" %>
+          <%= link_to 'Deletar', discography,class: "card-footer-item button is-danger",method: :delete, data: { confirm: 'Are you sure?' } %>
+        </footer>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <footer class="card-footer">
-    <%= link_to 'Mostrar', discography,class: "card-footer-item"%>
-    <%= link_to 'Editar', edit_discography_path(discography),class: "card-footer-item" %>
-    <%= link_to 'Deletar', discography,class: "card-footer-item",method: :delete, data: { confirm: 'Are you sure?' } %>
-  </footer>
+  &nbsp;
+  <%= link_to 'Nova Discografia', new_discography_path,class: "button is-info is-inverted"  %>
 </div>
-</div>
-<% end %>
-</div>
-&nbsp;
-<%= link_to 'Nova Discografia', new_discography_path,class: "button is-info is-inverted"  %>

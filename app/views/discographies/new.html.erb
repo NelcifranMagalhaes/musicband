@@ -1,9 +1,10 @@
-
-<article class="message is-dark">
-  <div class="message-header">
-    <p>Cadastrar uma nova Discografia ou Música</p>
+<div class="container">
+	<article class="message is-dark">
+	  <div class="message-header">
+	    <p>Cadastrar uma nova Discografia ou Música</p>
+	</div>
+	 </article>   
+		<%= render 'form', discography: @discography %>
+	<br>
+	<%= link_to 'Voltar', discographies_path ,class: "button is-info is-inverted"%>
 </div>
- </article>   
-	<%= render 'form', discography: @discography %>
-<br>
-<%= link_to 'Voltar', discographies_path ,class: "button is-info is-inverted"%>

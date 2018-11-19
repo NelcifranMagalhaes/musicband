@@ -1,14 +1,14 @@
 <section class="section">
      <div class="container has-text-centered" id="div_disco">
-         <h2 class="title">Músicas</h2>
- 
+         <h2 class="title">
+             <span class="tag is-light is-large">Músicas</span>
+         </h2>
          <div class="tile is-ancestor">
          <% @discographies.each do |discography| %>
              <div class="tile is-parent">
                  <article class="tile is-child box">
                      <i class="fa fa-music fa-5x"></i>
                      <p class="title"><%= discography.name %></p>
-                     <p class="subtitle"><%=l discography.date_rise %></p>
                      <a class="button">Buy Tickets</a>
                  </article>
              </div>

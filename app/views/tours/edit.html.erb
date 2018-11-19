@@ -1,6 +1,13 @@
-<h1>Editing Tour</h1>
+&nbsp;
+<div class="container">
+	<article class="message is-dark">
+	  <div class="message-header">
+	    <p>Editando um show</p>
+	</div>
+	 </article>   
+		<%= render 'form', tour: @tour %>
+	<br>
+	<%= link_to 'Mostrar', @tour ,class: "button is-link"%> 
+	<%= link_to 'Voltar', tours_path ,class: "button is-info is-inverted"%>
 
-<%= render 'form', tour: @tour %>
-
-<%= link_to 'Show', @tour %> |
-<%= link_to 'Back', tours_path %>
+</div>

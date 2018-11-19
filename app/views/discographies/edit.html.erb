@@ -1,6 +1,11 @@
-<h1>Editing Discography</h1>
-
-<%= render 'form', discography: @discography %>
-
-<%= link_to 'Show', @discography %> |
-<%= link_to 'Back', discographies_path %>
+<div class="container">
+	<article class="message is-dark">
+	  <div class="message-header">
+	    <p>Editando a Música</p>
+	</div>
+	 </article>   
+		<%= render 'form', discography: @discography %>
+	<br>
+	<%= link_to 'Mostrar', @discography ,class: "button is-link"%> 
+	<%= link_to 'Voltar', discographies_path ,class: "button is-info is-inverted"%>
+</div>

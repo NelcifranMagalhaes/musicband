@@ -1,6 +1,12 @@
-<h1>Editing Artist</h1>
-
-<%= render 'form', artist: @artist %>
-
-<%= link_to 'Show', @artist %> |
-<%= link_to 'Back', artists_path %>
+&nbsp;
+<div class="container">
+<article class="message is-dark">
+  <div class="message-header">
+    <p>Editando o Integrante</p>
+</div>
+ </article>   
+	<%= render 'form', artist: @artist %>
+<br>
+<%= link_to 'Mostrar', @artist ,class: "button is-link"%> 
+<%= link_to 'Voltar', artists_path ,class: "button is-info is-inverted"%>
+</div>

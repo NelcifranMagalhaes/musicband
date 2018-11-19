@@ -1,19 +1,42 @@
-<p id="notice"><%= notice %></p>
+&nbsp;
+<% if notice.present? %>
+<div class="notification">
+	<p id="notice"><%= notice %></p>
+</div>
+<% end %>
+<div class="container">
+	<div class="tile is-ancestor">
+		<div class="tile is-4 is-vertical is-parent">
+			<div class="tile is-child box">
+				<p class="title">Nome</p>
+				<p><%= @tour.name %></p>
+			</div>
+			<div class="tile is-child box">
+				<p class="title">Data do Show</p>
+				<p><%=l @tour.date_show %></p>
+			</div>
+		</div>
+		<div class="tile is-parent">
+			<div class="tile is-child box">
+				<p class="title">Descrição</p>
+				<p><%= @tour.description %></p>
+			</div>
+		</div>
+		<div class="tile is-4 is-vertical is-parent">
+			<div class="tile is-child box">
+				<% if  @tour.tour_photo.present?%>
+				<figure class="image is-4by3"><%= cl_image_tag @tour.tour_photo.filename + ".jpg",secure: true%></figure>
+				<% end %>
+			</div>
+		</div>
+	</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @tour.name %>
-</p>
+	<div class="buttons">
+		<%= link_to 'Editar', edit_tour_path(@tour) ,class: "button is-link" %>
+		<%= link_to 'Voltar', tours_path ,class: "button" %>
 
-<p>
-  <strong>Date show:</strong>
-  <%= @tour.date_show %>
-</p>
+	</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @tour.description %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_tour_path(@tour) %> |
-<%= link_to 'Back', tours_path %>
+

@@ -1,24 +1,42 @@
-<p id="notice"><%= notice %></p>
+&nbsp;
+<% if notice.present? %>
+<div class="notification">
+	<p id="notice"><%= notice %></p>
+</div>
+<% end %>
+<div class="container">
+	<div class="tile is-ancestor">
+		<div class="tile is-4 is-vertical is-parent">
+			<div class="tile is-child box">
+				<p class="title">Nome</p>
+				<p><%= @artist.name %></p>
+			</div>
+			<div class="tile is-child box">
+				<p class="title">Nick / Codinome</p>
+				<p><%= @artist.nick_name %></p>
+			</div>
+		</div>
+		<div class="tile is-parent">
+			<div class="tile is-child box">
+				<p class="title">Descrição</p>
+				<p><%= @artist.description %></p>
+			</div>
+		</div>
+		<div class="tile is-4 is-vertical is-parent">
+			<div class="tile is-child box">
+				<% if  @artist.artist_photo.present?%>
+				<figure class="image is-4by3"><%= cl_image_tag @artist.artist_photo.filename + ".jpg",secure: true%></figure>
+				<% end %>
+			</div>
+		</div>
+	</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
-</p>
+	<div class="buttons">
+		<%= link_to 'Editar', edit_artist_path(@artist) ,class: "button is-link" %>
+		<%= link_to 'Voltar', artists_path ,class: "button" %>
 
-<p>
-  <strong>Nick name:</strong>
-  <%= @artist.nick_name %>
-</p>
+	</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @artist.description %>
-</p>
+</div>
 
-<p>
-  <strong>Position:</strong>
-  <%= @artist.position %>
-</p>
 
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>

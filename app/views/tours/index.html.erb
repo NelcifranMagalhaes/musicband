@@ -1,39 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<% @tours.each do |tour| %>
-<div class="box">
-  <article class="media">
-    <div class="media-left">
-      <figure class="image is-64x64">
-        <%= cl_image_tag tour.tour_photo.filename + ".jpg",class: "image is-96x96",secure: true%>
-      </figure>
-    </div>
-    <div class="media-content">
-      <div class="content">
-        <p>
-          <strong><%= tour.name %></strong> <small>@<%= tour.date_show %></small> <small></small>
-          <br>
-          <%= tour.description %>
-        </p>
+  <% @tours.each do |tour| %>
+  <div class="box">
+    <article class="media">
+      <div class="media-left">
+        <figure class="image is-64x64">
+          <%= cl_image_tag tour.tour_photo.filename + ".jpg",class: "image is-96x96",secure: true%>
+        </figure>
       </div>
-      <nav class="level is-mobile">
-        <div class="level-left">
-          <div class="field is-grouped">
-            <p class="control">
-              <%= link_to 'Show', tour ,class: "button is-link"%>
-            </p>
-
-            <p class="control">
-              <%= link_to 'Editar', edit_tour_path(tour),class: "button" %>
-            </p>
-            <p class="control">
-              <%= link_to 'Deletar', tour,class: "button is-danger",method: :delete, data: { confirm: 'Você tem certeza?' } %>
-            </p>
-          </div>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong><%= tour.name %></strong> <small>@<%= tour.date_show %></small> <small></small>
+            <br>
+            <%= tour.description %>
+          </p>
         </div>
-      </nav>
-    </div>
-  </article>
+        <nav class="level is-mobile">
+          <div class="level-left">
+            <div class="field is-grouped">
+              <p class="control">
+                <%= link_to 'Show', tour ,class: "button is-link"%>
+              </p>
+              <p class="control">
+                <%= link_to 'Editar', edit_tour_path(tour),class: "button" %>
+              </p>
+              <p class="control">
+                <%= link_to 'Deletar', tour,class: "button is-danger",method: :delete, data: { confirm: 'Você tem certeza?' } %>
+              </p>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>
+  <% end %>
+  <%= link_to 'Novo Show', new_tour_path,class: "button is-info is-inverted" %>
 </div>
-<% end %>
-<%= link_to 'Novo Show', new_tour_path,class: "button is-info is-inverted" %>

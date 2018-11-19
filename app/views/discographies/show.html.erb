@@ -1,19 +1,32 @@
-<p id="notice"><%= notice %></p>
+&nbsp;
+<% if notice.present? %>
+<div class="notification">
+	<p id="notice"><%= notice %></p>
+</div>
+<% end %>
+<div class="container">
+	<div class="tile is-ancestor">
+		<div class="tile is-4 is-vertical is-parent">
+			<div class="tile is-child box">
+				<p class="title">Nome</p>
+				<p><%= @discography.name %></p>
+			</div>
+			<div class="tile is-child box">
+				<p class="title">Data</p>
+				<p><%=l @discography.date_rise %></p>
+			</div>
+		</div>
+		<div class="tile is-parent">
+			<div class="tile is-child box">
+				<p class="title">Descrição</p>
+				<p><%= @discography.description %></p>
+			</div>
+		</div>
+	</div>
+	<div class="buttons">
+		<%= link_to 'Editar', edit_discography_path(@discography) ,class: "button is-link" %>
+		<%= link_to 'Voltar', discographies_path ,class: "button" %>
+	</div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @discography.name %>
-</p>
 
-<p>
-  <strong>Date rise:</strong>
-  <%= @discography.date_rise %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @discography.description %>
-</p>
-
-<%= link_to 'Edit', edit_discography_path(@discography) %> |
-<%= link_to 'Back', discographies_path %>
