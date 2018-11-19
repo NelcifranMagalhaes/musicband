@@ -9,8 +9,8 @@
                  <article class="tile is-child box">
                      <i class="fa fa-volume-up fa-5x"></i>
                      <p class="title"><%= tour.name %></p>
-                     <p class="subtitle"><%=l tour.date_show %></p>
-                     <a class="button">Buy Tickets</a>
+                     <p class="subtitle">Data: <%=l tour.date_show %></p>
+                     <%= link_to '+detalhes', tour,class: "button"%>
                  </article>
              </div>
          <% end %>
