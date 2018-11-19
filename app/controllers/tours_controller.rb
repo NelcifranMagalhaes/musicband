@@ -48,7 +48,6 @@ class ToursController < ApplicationController
   def update
     respond_to do |format|
       if @tour.update(tour_params)
-        saving_images(@tour)
         format.html { redirect_to @tour, notice: 'Anúncio de show atualizado.' }
         format.json { render :show, status: :ok, location: @tour }
       else
