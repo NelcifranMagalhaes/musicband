@@ -14,7 +14,7 @@
                     <div class="card-image">
                         <figure class="image is-2by1">
                             <% if artist.artist_photo.present? %>  
-                                <%= cl_image_tag artist.artist_photo.filename + ".jpg",class: "image is-64x64",secure: true%>
+                                <%= cl_image_tag artist.artist_photo.filename + ".jpg",class: "image is-64x64",secure: true,id: 'image'%>
                             <% end %>
                         </figure>
                     </div>
@@ -38,3 +38,17 @@
     </div>
     </div>
 </section>
+
+<script type="text/javascript">
+import Viewer from 'viewerjs';
+// View an image
+const viewer = new Viewer(document.getElementById('image'), {
+  inline: true,
+  viewed() {
+    viewer.zoomTo(1);
+  },
+});
+
+// View a list of images
+const gallery = new Viewer(document.getElementById('images'));
+</script>
