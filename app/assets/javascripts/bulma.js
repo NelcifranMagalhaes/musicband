@@ -31,11 +31,8 @@ $(document).ready(function() {
 	        'slow');
 	});
 
-	
     $('.image').each(function(i, obj) {
-        
         const gallery = new Viewer(obj);
-
     });    
 
  });
