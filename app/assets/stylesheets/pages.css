@@ -2,3 +2,7 @@
 .footer{
 	min-height: 540px ;
 }
+
+.tile.is-ancestor {
+    margin-top: 3rem;
+}
