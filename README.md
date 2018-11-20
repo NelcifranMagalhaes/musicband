@@ -1,24 +1,36 @@
-# README
+# band XD
+> site for music band.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+A Site in rails for a music bands.
 
-* Ruby version
+![](rock.gif)
 
-* System dependencies
+## Installation
 
-* Configuration
+Windows & Linux:
 
-* Database creation
+```sh
+git clone or download the project
+```
+## Technologies used
 
-* Database initialization
+*  Ruby on Rails
+*  Bulma front end Framework
+*  Font awesome
 
-* How to run the test suite
+## Development setup
 
-* Services (job queues, cache servers, search engines, etc.)
+Just run theses commands: 
 
-* Deployment instructions
+```sh
+bundle install
+rails db:create
+rails db:migrate
+rails s
+```
+## Meta
 
-* ...
+Nelcifran Magalhaes – [@Linkedin](https://www.linkedin.com/in/nelcifranpires/
+) – nelcifranpires@gmail.com
+
