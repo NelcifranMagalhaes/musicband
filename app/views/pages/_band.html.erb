@@ -11,10 +11,10 @@
             <div class="column">
 
                 <div class="card">
-                    <div class="card-image">
+                    <div class="card-image" id="images">
                         <figure class="image is-2by1">
                             <% if artist.artist_photo.present? %>  
-                                <%= cl_image_tag artist.artist_photo.filename + ".jpg",class: "image is-64x64",secure: true,id: 'image'%>
+                                <%= cl_image_tag artist.artist_photo.filename + ".jpg",class: "image is-64x64",secure: true%>
                             <% end %>
                         </figure>
                     </div>
@@ -36,19 +36,4 @@
         <% end %>
         </div>
     </div>
-    </div>
 </section>
-
-<script type="text/javascript">
-import Viewer from 'viewerjs';
-// View an image
-const viewer = new Viewer(document.getElementById('image'), {
-  inline: true,
-  viewed() {
-    viewer.zoomTo(1);
-  },
-});
-
-// View a list of images
-const gallery = new Viewer(document.getElementById('images'));
-</script>
