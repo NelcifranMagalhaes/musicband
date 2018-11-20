@@ -11,7 +11,7 @@
             <div class="column">
 
                 <div class="card">
-                    <div class="card-image" id="images">
+                    <div class="card-image">
                         <figure class="image is-2by1">
                             <% if artist.artist_photo.present? %>  
                                 <%= cl_image_tag artist.artist_photo.filename + ".jpg",class: "image is-64x64",secure: true%>
