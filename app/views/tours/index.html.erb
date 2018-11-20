@@ -23,12 +23,14 @@
               <p class="control">
                 <%= link_to 'Show', tour ,class: "button is-link"%>
               </p>
-              <p class="control">
-                <%= link_to 'Editar', edit_tour_path(tour),class: "button" %>
-              </p>
-              <p class="control">
-                <%= link_to 'Deletar', tour,class: "button is-danger",method: :delete, data: { confirm: 'Você tem certeza?' } %>
-              </p>
+              <% if current_user.present? %>
+                <p class="control">
+                  <%= link_to 'Editar', edit_tour_path(tour),class: "button" %>
+                </p>
+                <p class="control">
+                  <%= link_to 'Deletar', tour,class: "button is-danger",method: :delete, data: { confirm: 'Você tem certeza?' } %>
+                </p>
+              <% end %>
             </div>
           </div>
         </nav>
@@ -36,5 +38,7 @@
     </article>
   </div>
   <% end %>
-  <%= link_to 'Novo Show', new_tour_path,class: "button is-info is-inverted" %>
+  <% if current_user.present? %>
+    <%= link_to 'Novo Show', new_tour_path,class: "button is-info is-inverted" %>
+  <% end %>
 </div>

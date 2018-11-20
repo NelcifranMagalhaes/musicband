@@ -1,7 +1,7 @@
 <section class="section">
      <div class="container has-text-centered" id="div_disco">
          <h2 class="title">
-             <span class="tag is-light is-large">Últimas Músicas</span>
+             <span class="tag is-warning is-large">Últimas Músicas</span>
          </h2>
          <div class="tile is-ancestor">
          <% @discographies.last(3).each do |discography| %>
@@ -14,5 +14,11 @@
              </div>
          <% end %>
          </div>
+        <h2 class="title">
+            <%= link_to discographies_path  do%>
+                <span class="tag is-dark is-large">+ Músicas</span>
+            <% end %>
+
+        </h2>
      </div>
  </section>

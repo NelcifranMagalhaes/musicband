@@ -29,14 +29,18 @@
           </div>
         </div>
         <footer class="card-footer">
-          <%= link_to 'Mostrar', discography,class: "card-footer-item button is-link"%>
-          <%= link_to 'Editar', edit_discography_path(discography),class: "card-footer-item button" %>
-          <%= link_to 'Deletar', discography,class: "card-footer-item button is-danger",method: :delete, data: { confirm: 'Are you sure?' } %>
+          <%= link_to 'Ver', discography,class: "card-footer-item button is-link"%>
+          <% if current_user.present? %>
+            <%= link_to 'Editar', edit_discography_path(discography),class: "card-footer-item button" %>
+            <%= link_to 'Deletar', discography,class: "card-footer-item button is-danger",method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
         </footer>
       </div>
     </div>
     <% end %>
   </div>
   &nbsp;
-  <%= link_to 'Nova Discografia', new_discography_path,class: "button is-info is-inverted"  %>
+  <% if current_user.present? %>
+    <%= link_to 'Nova Discografia', new_discography_path,class: "button is-info is-inverted"  %>
+  <% end %>
 </div>
