@@ -22,16 +22,16 @@
 </div>
 &nbsp;
 <div class="field is-grouped">
-  <p class="control">
-    <%= link_to 'Show', band ,class: "button is-link"%>
-  </p>
+    <p class="control">
+      <%= link_to 'Show', band ,class: "button is-link"%>
+    </p>
 
-  <p class="control">
-    <%= link_to 'Editar', edit_band_path(band),class: "button" %>
-  </p>
-  <p class="control">
-    <%= link_to 'Deletar', band,class: "button is-danger",method: :delete, data: { confirm: 'Are you sure?' } %>
-  </p>
+    <p class="control">
+      <%= link_to 'Editar', edit_band_path(band),class: "button" %>
+    </p>
+    <p class="control">
+      <%= link_to 'Deletar', band,class: "button is-danger",method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
 </div>
 
 <% end %>
