@@ -48,6 +48,7 @@ class BandsController < ApplicationController
   def update
     respond_to do |format|
       if @band.update(band_params)
+        saving_images(@band)
         format.html { redirect_to @band, notice: 'Banda atualizada.' }
         format.json { render :show, status: :ok, location: @band }
       else
