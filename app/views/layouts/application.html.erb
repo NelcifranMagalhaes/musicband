@@ -66,19 +66,12 @@
     </nav>
     &nbsp;
     <p></p>
-    <section class="hero">
-        <figure class="image is-2by1">
-            <% if @band.present? %>  
-                <%= cl_image_tag @band.band_photo.filename + ".jpg",secure: true%>
-            <% end %>
-        </figure>
-    </section>
+
     <section class="section">
         <div class="container has-text-centered">
             <%= yield %>
         </div>
     </section>
-</body>
     <footer class="footer has-background-dark">
         <div class="container" id="div_contact">
             <div class="content has-text-centered">
@@ -104,6 +97,8 @@
             </div>
         </div>
     </footer>
+</body>
+
 
 </html>
 

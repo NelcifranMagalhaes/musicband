@@ -1,4 +1,10 @@
-
+<section class="hero">
+    <figure class="image is-2by1">
+        <% if @band.present? %>  
+            <%= cl_image_tag @band.band_photo.filename  + ".jpg",secure: true%>
+        <% end %>
+    </figure>
+</section>
 <%= render partial: "band",object: @artists %>
 <%= render partial: "discography",object: @discographies %>
 <%= render partial: "tour" ,object: @tours %>
