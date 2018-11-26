@@ -48,6 +48,7 @@ class ArtistsController < ApplicationController
   def update
     respond_to do |format|
       if @artist.update(artist_params)
+        saving_images(@artist)
         format.html { redirect_to @artist, notice: 'Integrante Atualizado.' }
         format.json { render :show, status: :ok, location: @artist }
       else
