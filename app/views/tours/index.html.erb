@@ -4,11 +4,13 @@
   <% @tours.each do |tour| %>
   <div class="box">
     <article class="media">
-      <div class="media-left">
-        <figure class="image is-64x64">
-          <%= cl_image_tag tour.tour_photo.filename + ".jpg",class: "image is-96x96",secure: true%>
-        </figure>
-      </div>
+      <% if tour.tour_photo.present? %>
+        <div class="media-left">
+          <figure class="image is-64x64">
+            <%= cl_image_tag tour.tour_photo.filename + ".jpg",class: "image is-96x96",secure: true%>
+          </figure>
+        </div>
+      <% end %>
       <div class="media-content">
         <div class="content">
           <p>
