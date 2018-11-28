@@ -23,7 +23,7 @@
         </header>
         <div class="card-content">
           <div class="content">
-            <%= link_to discography.description do%>
+            <%= link_to discography.description ,target: "_blank" do%>
               <span style="font-size: 48px; color: red;">
                 <i class="fa fa-youtube fa-3x"></i>
               </span>
@@ -33,8 +33,8 @@
           </div>
         </div>
         <footer class="card-footer">
-          <%= link_to 'Ver', discography,class: "card-footer-item button is-link"%>
           <% if current_user.present? %>
+            <%= link_to 'Ver', discography,class: "card-footer-item button is-link"%>
             <%= link_to 'Editar', edit_discography_path(discography),class: "card-footer-item button" %>
             <%= link_to 'Deletar', discography,class: "card-footer-item button is-danger",method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>

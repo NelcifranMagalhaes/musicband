@@ -4,10 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bandmusic</title>
+        <title>MalditaVisao</title>
         <%= csrf_meta_tags %>
         <%= csp_meta_tag %>
-
         <%= stylesheet_link_tag    'application', media: 'all' %>
         <%= javascript_include_tag 'application' %>
         <%= favicon_link_tag 'rock.ico', :rel => 'shortcut icon' %>
@@ -76,15 +75,15 @@
         <div class="container" id="div_contact">
             <div class="content has-text-centered">
                 <p>
-                    <%= link_to "https://www.facebook.com/Malditavisao/" do%>
+                    <%= link_to "https://www.facebook.com/Malditavisao/",target: "_blank" do%>
                             <i class="fa fa-facebook-square fa-2x"></i>
                     <% end %>
 
-                    <%= link_to "https://www.instagram.com/malditavisao/?hl=pt-br" do%>
+                    <%= link_to "https://www.instagram.com/malditavisao/?hl=pt-br",target: "_blank" do%>
                             <i class="fa fa-instagram fa-2x"></i>
                     <% end %>
 
-                    <%= link_to "https://www.youtube.com/channel/UC4kTjYiC5FkBUEu8Qdu8tOw" do%>
+                    <%= link_to "https://www.youtube.com/channel/UC4kTjYiC5FkBUEu8Qdu8tOw",target: "_blank" do%>
                             <i class="fa fa-youtube fa-2x"></i>
                     <% end %>
                 </p>

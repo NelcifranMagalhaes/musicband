@@ -7,7 +7,7 @@
          <% @discographies.last(3).each do |discography| %>
              <div class="tile is-parent">
                  <article class="tile is-child box">
-                     <%= link_to discography.description do%>
+                     <%= link_to discography.description,target: "_blank" do%>
                        <span style="font-size: 48px; color: red;">
                          <i class="fa fa-youtube fa-2x"></i>
                        </span>
