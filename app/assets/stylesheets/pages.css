@@ -2,9 +2,7 @@
     padding: 12rem 3.5rem;
 }*/
 
-body {
-background: #d37447;
-}
+
 .card.large {
 height: 600px;
 -webkit-backface-visibility: hidden;
@@ -102,9 +100,6 @@ animation: rotating 2s linear infinite;
 {color: lemonchiffon}
 .footer a:hover
 {color: crimson;}
-.fa
-{color: lemonchiffon;
-    margin: 10px}
 
 .section {
     padding: 3rem 1.5rem;
