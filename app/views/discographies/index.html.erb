@@ -23,7 +23,11 @@
         </header>
         <div class="card-content">
           <div class="content">
-            <%= discography.description[0...128] %>...
+            <%= link_to discography.description do%>
+              <span style="font-size: 48px; color: red;">
+                <i class="fa fa-youtube fa-3x"></i>
+              </span>
+            <% end %>
             <br>
             <p class="title is-4"><%= l discography.date_rise %></p>
           </div>
