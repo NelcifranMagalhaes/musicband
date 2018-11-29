@@ -1,14 +1,30 @@
-<p id="notice"><%= notice %></p>
+&nbsp;
+<p></p>
+<% if notice.present? %>
+<div class="notification">
+	<p id="notice"><%= notice %></p>
+</div>
+<% end %>
+<div class="container">
+	<div class="tile is-ancestor">
+		<div class="tile is-4 is-vertical is-parent">
+			<div class="tile is-child box">
+				<p class="title">Nome</p>
+				<p><%= @band.name %></p>
+			</div>
+		</div>
+		<div class="tile is-parent">
+			<div class="tile is-child box">
+				<p class="title"><%= @band.description%></p>
+			</div>
+		</div>
+	</div>
+	<div class="buttons">
+		<% if current_user.present? %>
+			<%= link_to 'Editar', edit_band_path(@band) ,class: "button is-link" %>
+		<% end %>
+		<%= link_to 'Voltar', root_path ,class: "button" %>
+	</div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @band.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @band.description %>
-</p>
-
-<%= link_to 'Edit', edit_band_path(@band) %> |
-<%= link_to 'Back', bands_path %>
