@@ -6,7 +6,7 @@ class ToursController < ApplicationController
   # GET /tours
   # GET /tours.json
   def index
-    @tours = Tour.all
+    @tours = Tour.order(date_show: :desc).all
   end
 
   # GET /tours/1
