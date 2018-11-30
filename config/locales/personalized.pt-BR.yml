@@ -6,7 +6,8 @@ pt-BR:
       band: Banda 
       discography: Discografia 
       tour: Show 
-      user: Usuário 
+      user: Usuário
+      photo: Foto/imagem 
 
     attributes:  
       artist:
@@ -32,7 +33,9 @@ pt-BR:
       user:
         email: Email
         password: Senha
-        
+
+      photo:
+        image: Imagem/Foto
 
     pagination:
       first: "&laquo;"

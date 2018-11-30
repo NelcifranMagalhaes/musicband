@@ -20,15 +20,25 @@
     </div>
   </div>
 
-  <div class="field">
-    <label class="label">Foto da Banda</label>
-      <div class="control">
-        <%= f.input :band_photo,as: :file,label: false ,input_html: {class: 'input'}%>
+    <div id ="photos">
+      <%= f.simple_fields_for :photos do |ph| %>
+        <%= render 'photo_fields', f: ph %>
+      <% end %>
     </div>
-  </div>
-
+    
+    <div class="links">
+      <div class="field is-horizontal">
+        <div class="field-body">
+          <div class="field">
+            <div class="control">
+              <%= link_to_add_association '+Fotos', f, :photos,class: "button is-success"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
   <div class= "control">
     <%= f.button :submit ,class: "button is-primary"%>
   </div>
-</div>
 <% end %>

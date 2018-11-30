@@ -23,7 +23,10 @@ class BandsController < ApplicationController
   end
 
   def saving_images(band)
-    Cloudinary::Uploader.upload("public/uploads/band/band_photo/#{band.id}/#{band.band_photo.filename}",public_id:"#{band.band_photo.filename}")
+    band.photos.each do |p|
+      Cloudinary::Uploader.upload("public/uploads/photo/image/#{p.id}/#{p.image.filename}",public_id:"#{p.image.filename}")
+    end
+    
   end
 
   # POST /bands
@@ -76,6 +79,6 @@ class BandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def band_params
-      params.require(:band).permit(:name, :description,:band_photo)
+      params.require(:band).permit(:name, :description,photos_attributes: [:id,:image,:_destroy])
     end
 end

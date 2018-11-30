@@ -13,6 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require bulma
+//= require cocoon
 //= require activestorage
 //= require_tree .
 //= require serviceworker-companion

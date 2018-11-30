@@ -5,7 +5,9 @@
 <div class="card">
   <div class="card-image">
     <figure class="image is-3by2">
-        <%= cl_image_tag band.band_photo.filename + ".jpg",class: "image is-96x96",secure: true%>
+      <% band.photos.each do |b| %>
+          <%= cl_image_tag b.image.filename + ".jpg",class: "image is-96x96",secure: true%>
+      <% end %>
     </figure>
   </div>
   <div class="card-content">

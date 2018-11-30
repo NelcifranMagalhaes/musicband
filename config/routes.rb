@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'photo/destroy'
   resources :discographies
   resources :tours
   resources :artists

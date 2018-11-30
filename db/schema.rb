@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_133725) do
+ActiveRecord::Schema.define(version: 2018_11_30_132106) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_133725) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "band_photo"
+    t.string "photos"
   end
 
   create_table "discographies", force: :cascade do |t|
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 2018_11_14_133725) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.bigint "band_id"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["band_id"], name: "index_photos_on_band_id"
   end
 
   create_table "tours", force: :cascade do |t|
@@ -62,4 +70,5 @@ ActiveRecord::Schema.define(version: 2018_11_14_133725) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "photos", "bands"
 end

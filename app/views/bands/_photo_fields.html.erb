@@ -1,0 +1,23 @@
+<div class="nested-fields">
+	<div class="tile is-parent">
+		<div class="tile is-child box">
+			<div class="field is-horizontal">
+				<div class="field-body">
+					<div class="field">
+						<label class="label">Foto</label>
+						<div class="control">
+							<%= f.input :image,as: :file,label: false ,input_html: {class: 'input'}%>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="field is-grouped is-grouped-right">
+			  <p class="control">
+				<%= link_to_remove_association "remover foto", f ,class: "button is-danger"%>   
+			  </p>
+			</div>
+			
+			<br>
+		</div>
+	</div>
+</div>
