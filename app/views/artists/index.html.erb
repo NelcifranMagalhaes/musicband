@@ -22,18 +22,20 @@
         </div>
         <nav class="level is-mobile">
           <div class="level-left">
-            <div class="field is-grouped">
-              <p class="control">
-                <%= link_to 'Show', artist ,class: "button is-link"%>
-              </p>
+          <% if current_user.present? %>
+              <div class="field is-grouped">
+                <p class="control">
+                  <%= link_to 'Show', artist ,class: "button is-link"%>
+                </p>
 
-              <p class="control">
-                <%= link_to 'Editar', edit_artist_path(artist),class: "button" %>
-              </p>
-              <p class="control">
-                <%= link_to 'Deletar', artist,class: "button is-danger",method: :delete, data: { confirm: 'Você tem certeza?' } %>
-              </p>
-            </div>
+                <p class="control">
+                  <%= link_to 'Editar', edit_artist_path(artist),class: "button" %>
+                </p>
+                <p class="control">
+                  <%= link_to 'Deletar', artist,class: "button is-danger",method: :delete, data: { confirm: 'Você tem certeza?' } %>
+                </p>
+              </div>
+            <% end %>
           </div>
         </nav>
       </div>
