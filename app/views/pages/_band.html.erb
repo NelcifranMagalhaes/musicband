@@ -7,7 +7,7 @@
             <p><%= @band.description if @band.present?%></p>
         </div>
         <div class="columns is-centered" style="padding: 2rem">
-            <% @artists.each do |artist| %>
+            <% @artists.last(3).each do |artist| %>
             <div class="column">
 
                 <div class="card">
