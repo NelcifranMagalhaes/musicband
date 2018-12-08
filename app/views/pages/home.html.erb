@@ -1,21 +1,16 @@
-<section class="hero">
-	<% if @band.present? %>  
+<% if @band.present? %>  
+	<section class="hero">
 		<% @band.photos.each do |ph| %>
-		<div class="mySlides fade">
-			<figure class="image is-2by1">
-				<%= cl_image_tag ph.image.filename  + ".jpg",secure: true%>
-			</figure>
-		</div>
+			<div class="mySlides fade">
+				<figure class="image is-2by1">
+					<%= cl_image_tag ph.image.filename  + ".jpg",secure: true%>
+				</figure>
+			</div>
+				<span class="dot"></span> 
 		<% end %>
-	<% end %>
-</section>
-<br>
-
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-</div>
+	</section>
+		<br>
+<% end %>
 <%= render partial: "band",object: @artists %>
 <%= render partial: "discography",object: @discographies %>
 <%= render partial: "tour" ,object: @tours %>
